@@ -46,10 +46,10 @@ public class datos2 extends javax.swing.JFrame {
         jLabel1.setText("Metodo Simplex");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 130));
 
-        jLabel2.setText("Ingresa el numero de las restricciones");
+        jLabel2.setText("Enter the number of restrictions");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 200, 30));
 
-        jLabel3.setText("Ingresa numero de las variables");
+        jLabel3.setText("Enter number of variables");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 190, 40));
         getContentPane().add(var, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 70, 30));
         getContentPane().add(restr, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 70, 30));
@@ -62,8 +62,6 @@ public class datos2 extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 180, 60));
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 50, 30));
-
-        jLabel5.setText(" mas el objetivo ");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 110, 30));
 
         pack();

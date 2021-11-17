@@ -85,7 +85,7 @@ public class mostrar extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         DefaultTableModel model = (DefaultTableModel) tabla.getModel();
-        int restricciones = Integer.parseInt(restr.getText());
+        int restricciones = Integer.parseInt(restr.getText())+1;
         int variables = Integer.parseInt(var.getText());
         int columna1 = variables;
         for (int i = 0; i < variables; i++) {
