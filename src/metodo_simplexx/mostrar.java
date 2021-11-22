@@ -58,6 +58,7 @@ public class mostrar extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 567, 174));
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/show_icon_184109.png"))); // NOI18N
         jButton1.setText("Show table");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,19 +67,20 @@ public class mostrar extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 320, 40));
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/-sort_90210.png"))); // NOI18N
         jButton2.setText("sort out");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 320, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 320, 50));
 
         text.setColumns(20);
         text.setRows(5);
         jScrollPane5.setViewportView(text);
 
-        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 570, 160));
+        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 570, 160));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

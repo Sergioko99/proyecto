@@ -48,6 +48,9 @@
     </Container>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/show_icon_184109.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Show table"/>
       </Properties>
       <Events>
@@ -61,6 +64,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/-sort_90210.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="sort out"/>
       </Properties>
       <Events>
@@ -68,7 +74,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="150" y="260" width="320" height="40"/>
+          <AbsoluteConstraints x="150" y="260" width="320" height="50"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -78,7 +84,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="310" width="570" height="160"/>
+          <AbsoluteConstraints x="30" y="320" width="570" height="160"/>
         </Constraint>
       </Constraints>
 

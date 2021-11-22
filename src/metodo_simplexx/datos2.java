@@ -51,16 +51,23 @@ public class datos2 extends javax.swing.JFrame {
 
         jLabel3.setText("Enter number of variables");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 190, 40));
-        getContentPane().add(var, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 70, 30));
-        getContentPane().add(restr, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 70, 30));
+        getContentPane().add(var, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 170, 30));
 
+        restr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                restrActionPerformed(evt);
+            }
+        });
+        getContentPane().add(restr, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 170, 30));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/3706872-control-music-play-play-music-play-sound-start_108717 (1).png"))); // NOI18N
         jButton1.setText("Start");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 180, 60));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 140, 70));
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 50, 30));
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 110, 30));
 
@@ -70,6 +77,10 @@ public class datos2 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new mostrar().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void restrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restrActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_restrActionPerformed
 
     /**
      * @param args the command line arguments
