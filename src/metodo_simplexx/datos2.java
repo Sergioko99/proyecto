@@ -43,7 +43,7 @@ public class datos2 extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Metodo Simplex");
+        jLabel1.setText("SIMPLEX METHOD");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 130));
 
         jLabel2.setText("Enter the number of restrictions");
@@ -54,7 +54,7 @@ public class datos2 extends javax.swing.JFrame {
         getContentPane().add(var, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 70, 30));
         getContentPane().add(restr, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 70, 30));
 
-        jButton1.setText("Iniciar");
+        jButton1.setText("Start");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

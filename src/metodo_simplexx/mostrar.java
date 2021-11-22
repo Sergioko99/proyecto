@@ -58,7 +58,7 @@ public class mostrar extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 567, 174));
 
-        jButton1.setText("Mostrar datos ");
+        jButton1.setText("Show table");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -66,7 +66,7 @@ public class mostrar extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 320, 40));
 
-        jButton2.setText("Resolver");
+        jButton2.setText("sort out");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -85,21 +85,21 @@ public class mostrar extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         DefaultTableModel model = (DefaultTableModel) tabla.getModel();
-        int restricciones = Integer.parseInt(restr.getText())+1;
+        int restrictions = Integer.parseInt(restr.getText());
         int variables = Integer.parseInt(var.getText());
         int columna1 = variables;
         for (int i = 0; i < variables; i++) {
             model.addColumn("x" + (i + 1));
         }
-        variables = restricciones + variables;
+        variables = restrictions + variables;
 
-        model.setRowCount(restricciones);
+        model.setRowCount(restrictions);
         model.setColumnCount(variables);
         for (int j = columna1; j < variables; j++) {
             tabla.setValueAt(0, 0, j);
         }
         int i1 = 1, j1 = columna1;
-        for (int i = 1; i < restricciones; i++) {
+        for (int i = 1; i < restrictions; i++) {
             for (int j = columna1; j < variables - 1; j++) {
                 if (i1 == i && j1 == j) {
                     tabla.setValueAt(1, i, j);
@@ -113,18 +113,18 @@ public class mostrar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        text.append("METODO SIMPLEX\n");
+        text.append("SIMPLEX METHOD\n");
         DecimalFormat l = new DecimalFormat("0.000");
-        int restricciones = Integer.parseInt(restr.getText());
+        int restrictions = Integer.parseInt(restr.getText());
         int variables = Integer.parseInt(var.getText());
-        int columna1 = variables;
-        variables = restricciones + variables;
-        double v[][] = new double[restricciones][variables];
+        int col = variables;
+        variables = restrictions + variables;
+        double v[][] = new double[restrictions][variables];
         int y1 = 1;
         for (int i = 0; i < variables; i++) {
-            if (i < columna1) {
+            if (i < col) {
                 text.append("\t x" + (i + 1));
-            } else if (i >= columna1 && i < variables - 1) {
+            } else if (i >= col && i < variables - 1) {
                 text.append("\t d" + (y1));
                 y1++;
 
@@ -134,13 +134,13 @@ public class mostrar extends javax.swing.JFrame {
             }
         }
         text.append("\n");
-        for (int i = 0; i < restricciones; i++) {
+        for (int i = 0; i < restrictions; i++) {
             for (int j = 0; j < variables; j++) {
                 v[i][j] = Double.parseDouble(tabla.getValueAt(i, j).toString());
             }
         }
 
-        for (int i = 0; i < restricciones; i++) {
+        for (int i = 0; i < restrictions; i++) {
             if(i!=0){
                 text.append("d"+i);
             }
@@ -150,56 +150,56 @@ public class mostrar extends javax.swing.JFrame {
             text.append("\n");
         }
         text.append("\n\n");
-        String v2[] = new String[restricciones];
-        int v3[] = new int[restricciones];
-        int v4[] = new int[restricciones];
+        String v2[] = new String[restrictions];
+        int v3[] = new int[restrictions];
+        int v4[] = new int[restrictions];
         int co = 0;
         while (true) {
-            if (co == columna1) {
+            if (co == col) {
                 break;
             }
 
             int f = 0, c = 0;
-            double negativo = 0;
-            for (int i = 0; i < columna1; i++) {
-                if (v[0][i] < negativo) {
-                    negativo = v[0][i];
+            double negative = 0;
+            for (int i = 0; i < col; i++) {
+                if (v[0][i] < negative) {
+                    negative = v[0][i];
                     c = i;
                 }
             }
-            text.append("EL MAXIMO NEGATIVO ES\n");
-            text.append(" " + negativo + "\nla columna es \n");
-            for (int i = 0; i < restricciones; i++) {
+            text.append("THE MAXIMUM NEGATIVE IS\n");
+            text.append(" " + negative + "\nthe column is \n");
+            for (int i = 0; i < restrictions; i++) {
                 text.append(" " + v[i][c] + "\n");
             }
             text.append("\n");
-            text.append("\n dividiendo con la columna\n");
+            text.append("\n dividing with the column\n");
             double menor = 0;
-            double v1[] = new double[restricciones - 1];
+            double v1[] = new double[restrictions - 1];
             int h = 0;
-            for (int i = 1; i < restricciones; i++) {
+            for (int i = 1; i < restrictions; i++) {
                 v1[h] = v[i][variables - 1] / v[i][c];
                 text.append(" " + v[i][variables - 1] + " / " + v[i][c] + " = " + v1[h] + " \n");
                 h++;
             }
             menor = v1[0];
-            for (int i = 0; i < restricciones - 1; i++) {
+            for (int i = 0; i < restrictions - 1; i++) {
                 if (v1[i] <= menor) {
                     menor = v1[i];
                     f = i + 1;
                 }
             }
-            text.append("el menor de la division es: " + menor + "\n");
+            text.append("the minor of the division is: " + menor + "\n");
             double pivo = v[f][c];
-            text.append("el pivote es:" + pivo);
+            text.append("the pivot is:" + pivo);
 
-            text.append("\nproceso de convertir el pivote en 1\n dividiendo toda la fila con el pivote\n");
+            text.append("\n process of converting the pivot to 1\n dividing the whole row with the pivot\n");
             for (int i = 0; i < variables; i++) {
                 double va = v[f][i];
                 v[f][i] = v[f][i] / pivo;
                 text.append("" + va + " / " + pivo + " = " + v[f][i] + "\n");
             }
-            for (int i = 1; i < restricciones; i++) {
+            for (int i = 1; i < restrictions; i++) {
                 if (i == f) {
                     v2[i] = "x" + (c + 1);
                     v3[i] = c + 1;
@@ -211,10 +211,10 @@ public class mostrar extends javax.swing.JFrame {
                 }
             }
 
-            text.append("\n proceso \n ");
-            for (int i = 0; i < restricciones; i++) {
+            text.append("\n process \n ");
+            for (int i = 0; i < restrictions; i++) {
                 if (i != f) {
-                    text.append("Convertiendo la columna del pivote en cero, en fila" + (i + 1) + "\n\n");
+                    text.append("Converting the pivot column to zero, in row" + (i + 1) + "\n\n");
 
                     double guar = 0;
                     guar = -v[i][c];
@@ -226,16 +226,16 @@ public class mostrar extends javax.swing.JFrame {
                 }
             }
             co = 0;
-            for (int i = 0; i < columna1; i++) {
+            for (int i = 0; i < col; i++) {
                 if (v[0][i] >= 0) {
                     co++;
                 }
             }
             y1=1;
             for (int i = 0; i < variables; i++) {
-                if (i < columna1) {
+                if (i < col) {
                     text.append("\t x" + (i + 1));
-                } else if (i >= columna1 && i < variables - 1) {
+                } else if (i >= col && i < variables - 1) {
                     text.append("\t d" + (y1));
                     y1++;
 
@@ -246,7 +246,7 @@ public class mostrar extends javax.swing.JFrame {
             }
             text.append("\n");
            
-            for (int i = 0; i < restricciones; i++) {
+            for (int i = 0; i < restrictions; i++) {
            if(i!=0){
            text.append(v2[i]);
            }
@@ -259,9 +259,9 @@ public class mostrar extends javax.swing.JFrame {
 
         }
         int y2 = 0;
-        text.append("RESULTADO\n");
+        text.append("OUTCOME\n");
         text.append("z = "+v[0][variables-1]+"\n");
-        for (int i = 1; i<restricciones; i++) {
+        for (int i = 1; i<restrictions; i++) {
             char m1[]=v2[i].toCharArray();
             if(m1[0]=='x'){
             text.append(" "+v2[i]+" = "+v[v4[i]][variables-1]+"\n");
