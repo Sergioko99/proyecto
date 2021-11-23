@@ -5,19 +5,25 @@
  */
 package metodo_simplexx;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
  *
  * @author Sergio
  */
+
 public class datos2 extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form datos2
      */
     public datos2() {
+        
         initComponents();
+ this.setLocationRelativeTo(null); 
     }
 
     /**
@@ -51,11 +57,27 @@ public class datos2 extends javax.swing.JFrame {
 
         jLabel3.setText("Enter number of variables");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 190, 40));
+
+        var.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                varActionPerformed(evt);
+            }
+        });
+        var.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                varKeyTyped(evt);
+            }
+        });
         getContentPane().add(var, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 170, 30));
 
         restr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 restrActionPerformed(evt);
+            }
+        });
+        restr.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                restrKeyTyped(evt);
             }
         });
         getContentPane().add(restr, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 170, 30));
@@ -75,12 +97,45 @@ public class datos2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String vart = var.getText(); 
+        String rest = restr.getText();
+       
+        
+        if(!vart.equals("") && !rest.equals("") ){
         new mostrar().setVisible(true);
+        setVisible(false);
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "You have not filled all the fields");
+        }       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void restrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restrActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_restrActionPerformed
+
+    private void varActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_varActionPerformed
+
+    private void varKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_varKeyTyped
+        char validar=evt.getKeyChar();
+        
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Enter numbers only");
+        }
+    }//GEN-LAST:event_varKeyTyped
+
+    private void restrKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_restrKeyTyped
+        char validar=evt.getKeyChar();
+        
+        if(Character.isLetter(validar)){
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Enter numbers only");
+        }
+    }//GEN-LAST:event_restrKeyTyped
 
     /**
      * @param args the command line arguments

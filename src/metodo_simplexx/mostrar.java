@@ -21,6 +21,7 @@ public class mostrar extends javax.swing.JFrame {
      */
     public mostrar() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
     
 
@@ -39,6 +40,7 @@ public class mostrar extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         text = new javax.swing.JTextArea();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -81,6 +83,14 @@ public class mostrar extends javax.swing.JFrame {
         jScrollPane5.setViewportView(text);
 
         getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 570, 160));
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/return_icon_154912.png"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(643, 0, 80, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -273,6 +283,11 @@ public class mostrar extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       new datos2().setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -311,6 +326,7 @@ public class mostrar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTable tabla;
