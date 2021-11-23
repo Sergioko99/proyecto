@@ -3,6 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+ /**
+  @ Author: Sergio Sanchez Sanchez
+  @ Author: Branadon Gerardo Rosales Almaraz
+  @ Author: Luis Anatornio Lopez Reyes
+  **/
 package metodo_simplexx;
 
 import java.text.DecimalFormat;
